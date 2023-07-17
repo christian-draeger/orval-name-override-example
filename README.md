@@ -15,16 +15,15 @@ The goal is to be able to:
 npm run generate-api
 ```
 
-## Error
-
-<img width="1204" alt="image" src="https://github.com/christian-draeger/orval-name-override-example/assets/55869787/32029e62-e552-4586-a471-19d17cab763a">
-
-
-## Solutions
+## Solution
 ### 🤔 1. Generate models and react-query hooks without name clashes
 💡Putting the output of the generated models and react-query hooks in different folders.
-⚠️ generated model and hook names exists twice (per spec) which would lead to clashes in generated barrel files.
+⚠️ generated model and hook names exists twice (per spec).
 
 ### 🤔 2. Create barrel file exports without clashes
 1. 💡 create barrel file on output root ==> set workspace in orval.config.ts
-2. override/suffix the name of the generated models and hooks ==> set title in orval.config.ts
+2. ❌ override/suffix the name of the generated models and hooks ==> set title in orval.config.ts
+
+#### Error
+Since adding a suffix to the output titles doesn't seem to work the genreated barrel file will clash because of export name duplications:
+<img width="1204" alt="image" src="https://github.com/christian-draeger/orval-name-override-example/assets/55869787/32029e62-e552-4586-a471-19d17cab763a">
