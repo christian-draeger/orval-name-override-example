@@ -2,12 +2,14 @@ module.exports = {
   "first-api": {
     output: {
       mode: "tags-split",
-      target: "proxy/first-api/api",
-      schemas: "proxy/first-api/models",
+      workspace: "./proxy/", // leads to barrel file generation in the workspace root
+      target: "first-api/api",
+      schemas: "first-api/models",
       client: "react-query",
       mock: false,
       tsconfig: "tsconfig.json",
       override: {
+        title: (title) => `${title}FirstApi`,
       },
     },
     input: {
@@ -18,12 +20,14 @@ module.exports = {
   "second-api": {
     output: {
       mode: "tags-split",
-      target: "proxy/second-api/api",
-      schemas: "proxy/second-api/models",
+      workspace: "./proxy/",
+      target: "second-api/api",
+      schemas: "second-api/models",
       client: "react-query",
       mock: false,
       tsconfig: "tsconfig.json",
       override: {
+        title: (title) => `${title}SecondApi`,
       },
     },
     input: {

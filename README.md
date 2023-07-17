@@ -21,4 +21,5 @@ npm run generate-api
 ⚠️ generated model and hook names exists twice (per spec) which would lead to clashes in generated barrel files.
 
 ### 🤔 2. Create barrel file exports without clashes
-💡tbd
+1. 💡 create barrel file on output root ==> set workspace in orval.config.ts
+2. override/suffix the name of the generated models and hooks ==> set title in orval.config.ts
