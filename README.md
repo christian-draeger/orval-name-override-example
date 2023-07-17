@@ -15,6 +15,11 @@ The goal is to be able to:
 npm run generate-api
 ```
 
+## Error
+
+<img width="1204" alt="image" src="https://github.com/christian-draeger/orval-name-override-example/assets/55869787/32029e62-e552-4586-a471-19d17cab763a">
+
+
 ## Solutions
 ### 🤔 1. Generate models and react-query hooks without name clashes
 💡Putting the output of the generated models and react-query hooks in different folders.
