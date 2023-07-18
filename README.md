@@ -16,9 +16,8 @@ npm run generate-api
 ```
 
 #### Problem
-Since adding a suffix to the output titles doesn't seem to work the genreated barrel file will clash because of export name duplications:
+Generated barrel file will clash because of export name duplications:
 <img width="1204" alt="image" src="https://github.com/christian-draeger/orval-name-override-example/assets/55869787/32029e62-e552-4586-a471-19d17cab763a">
-
 
 ## Solution
 ### 🤔 1. Generate models and react-query hooks without name clashes
