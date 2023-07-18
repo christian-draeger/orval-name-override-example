@@ -1,3 +1,3 @@
-export * from './error';
-export * from './pet';
-export * from './pets';
+export * from './errorSecondApiDTO';
+export * from './petSecondApiDTO';
+export * from './petsSecondApiDTO';

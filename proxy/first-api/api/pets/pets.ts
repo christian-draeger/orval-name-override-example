@@ -20,47 +20,47 @@ import type {
   QueryKey
 } from '@tanstack/react-query'
 import type {
-  Pets,
-  Error
+  PetsFirstApiDTO,
+  ErrorFirstApiDTO
 } from '../../models'
 
 
 /**
  * @summary List all pets
  */
-export const listPets = (
+export const getFirstApilistPets = (
      options?: AxiosRequestConfig
- ): Promise<AxiosResponse<Pets>> => {
+ ): Promise<AxiosResponse<PetsFirstApiDTO>> => {
     return axios.get(
       `/pets`,options
     );
   }
 
 
-export const getListPetsQueryKey = () => [`/pets`];
+export const getGetFirstApilistPetsQueryKey = () => [`/pets`];
 
     
-export type ListPetsQueryResult = NonNullable<Awaited<ReturnType<typeof listPets>>>
-export type ListPetsQueryError = AxiosError<Error>
+export type GetFirstApilistPetsQueryResult = NonNullable<Awaited<ReturnType<typeof getFirstApilistPets>>>
+export type GetFirstApilistPetsQueryError = AxiosError<ErrorFirstApiDTO>
 
-export const useListPets = <TData = Awaited<ReturnType<typeof listPets>>, TError = AxiosError<Error>>(
-  options?: { query?:UseQueryOptions<Awaited<ReturnType<typeof listPets>>, TError, TData>, axios?: AxiosRequestConfig}
+export const useGetFirstApilistPets = <TData = Awaited<ReturnType<typeof getFirstApilistPets>>, TError = AxiosError<ErrorFirstApiDTO>>(
+  options?: { query?:UseQueryOptions<Awaited<ReturnType<typeof getFirstApilistPets>>, TError, TData>, axios?: AxiosRequestConfig}
 
   ):  UseQueryResult<TData, TError> & { queryKey: QueryKey } => {
 
   const {query: queryOptions, axios: axiosOptions} = options ?? {};
 
-  const queryKey =  queryOptions?.queryKey ?? getListPetsQueryKey();
+  const queryKey =  queryOptions?.queryKey ?? getGetFirstApilistPetsQueryKey();
 
   
 
 
-  const queryFn: QueryFunction<Awaited<ReturnType<typeof listPets>>> = ({ signal }) => listPets({ signal, ...axiosOptions });
+  const queryFn: QueryFunction<Awaited<ReturnType<typeof getFirstApilistPets>>> = ({ signal }) => getFirstApilistPets({ signal, ...axiosOptions });
 
 
   
 
-  const query = useQuery<Awaited<ReturnType<typeof listPets>>, TError, TData>(queryKey, queryFn, queryOptions) as  UseQueryResult<TData, TError> & { queryKey: QueryKey };
+  const query = useQuery<Awaited<ReturnType<typeof getFirstApilistPets>>, TError, TData>(queryKey, queryFn, queryOptions) as  UseQueryResult<TData, TError> & { queryKey: QueryKey };
 
   query.queryKey = queryKey;
 

@@ -9,7 +9,12 @@ module.exports = {
       mock: false,
       tsconfig: "tsconfig.json",
       override: {
-        title: (title) => `${title}FirstApi`,
+        components: {
+          schemas: {
+            suffix: 'FirstApiDTO',
+          },
+        },
+        operationName: (operation: any, route: string, verb: any) => `${verb}FirstApi_${operation.operationId}`,
       },
     },
     input: {
@@ -27,8 +32,13 @@ module.exports = {
       mock: false,
       tsconfig: "tsconfig.json",
       override: {
-        title: (title) => `${title}SecondApi`,
+        components: {
+          schemas: {
+            suffix: 'SecondApiDTO',
+          },
+        },
       },
+      operationName: (operation: any, route: string, verb: any) => `${verb}SecondApi_${operation.operationId}`,
     },
     input: {
       target: "./open-api-specs/petstore2.yaml",

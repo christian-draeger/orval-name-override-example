@@ -20,8 +20,8 @@ import type {
   QueryKey
 } from '@tanstack/react-query'
 import type {
-  Pets,
-  Error
+  PetsSecondApiDTO,
+  ErrorSecondApiDTO
 } from '../../models'
 
 
@@ -30,7 +30,7 @@ import type {
  */
 export const listPets = (
      options?: AxiosRequestConfig
- ): Promise<AxiosResponse<Pets>> => {
+ ): Promise<AxiosResponse<PetsSecondApiDTO>> => {
     return axios.get(
       `/pets`,options
     );
@@ -41,9 +41,9 @@ export const getListPetsQueryKey = () => [`/pets`];
 
     
 export type ListPetsQueryResult = NonNullable<Awaited<ReturnType<typeof listPets>>>
-export type ListPetsQueryError = AxiosError<Error>
+export type ListPetsQueryError = AxiosError<ErrorSecondApiDTO>
 
-export const useListPets = <TData = Awaited<ReturnType<typeof listPets>>, TError = AxiosError<Error>>(
+export const useListPets = <TData = Awaited<ReturnType<typeof listPets>>, TError = AxiosError<ErrorSecondApiDTO>>(
   options?: { query?:UseQueryOptions<Awaited<ReturnType<typeof listPets>>, TError, TData>, axios?: AxiosRequestConfig}
 
   ):  UseQueryResult<TData, TError> & { queryKey: QueryKey } => {

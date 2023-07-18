@@ -22,7 +22,8 @@ npm run generate-api
 
 ### 🤔 2. Create barrel file exports without clashes
 1. 💡 create barrel file on output root ==> set workspace in orval.config.ts
-2. ❌ override/suffix the name of the generated models and hooks ==> set title in orval.config.ts
+2. 💡 suffix the name of the generated models ==> output.override.components.suffix in orval.config.ts
+3. 💡 override the name of the generated hooks ==> output.override.operationName in orval.config.ts
 
 #### Error
 Since adding a suffix to the output titles doesn't seem to work the genreated barrel file will clash because of export name duplications:
