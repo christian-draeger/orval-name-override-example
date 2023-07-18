@@ -7,7 +7,7 @@ with the same name.
 The goal is to be able to:
 
 1. Generate models and react-query hooks without name clashes
-1. Create barrel file exports without clashes
+1. Create barrel file exports without clashes ==> see [Problem](#problem)
 
 ## Run Orval
 
@@ -25,6 +25,6 @@ npm run generate-api
 2. 💡 suffix the name of the generated models ==> output.override.components.suffix in orval.config.ts
 3. 💡 override the name of the generated hooks ==> output.override.operationName in orval.config.ts
 
-#### Error
+#### Problem
 Since adding a suffix to the output titles doesn't seem to work the genreated barrel file will clash because of export name duplications:
 <img width="1204" alt="image" src="https://github.com/christian-draeger/orval-name-override-example/assets/55869787/32029e62-e552-4586-a471-19d17cab763a">
